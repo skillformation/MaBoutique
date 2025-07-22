@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            //Ajouter une champ string pour le rôle de l'utilisateur
+            $table->string('role')->default('customer'); // 'user', 'admin', etc.
             $table->rememberToken();
             $table->timestamps();
         });
