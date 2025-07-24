@@ -16,6 +16,14 @@
         .mobile-menu.open {
             transform: translateX(0); /* Visible */
         }
+
+        .desktop-menu {
+            transition: transform 0.3s ease-out;
+            transform: translateX(-100%); /* Masqué à gauche par défaut */
+        }
+        .desktop-menu.open {
+            transform: translateX(0); /* Visible */
+        }
         
         /* Barre de recherche full-width pour Mobile/Tablette (apparaît en dessous de la nav) */
         .search-overlay {
