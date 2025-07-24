@@ -18,9 +18,9 @@
                 <span class="text-gray-500 text-sm ml-1">(120)</span>
             </div>
         </div>
-        <button class="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition-colors duration-200 font-medium mb-2">
+        <a href="{{route('cart.add',$product)}}" class="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition-colors duration-200 font-medium mb-2">
             Ajouter au panier
-        </button>
+        </a>
 
         <div class="style-tip-output text-sm text-gray-700 mt-3 p-2 bg-gray-100 rounded-md hidden"></div>
     </div>

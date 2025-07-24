@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
+use App\Models\Cart;
 use Illuminate\Http\Request;
+
 
 class CartController extends Controller
 {
@@ -17,6 +20,11 @@ class CartController extends Controller
     //Ajouter un produit au panier a partir du produit selectionné
     public function addToCart(Product $product)
     {
+        $cart=Cart::create(['user_id' => auth()->id(),
+                                'product_id' => $product->id,
+                                'quantity' => 1,
+                                'price' => $product->price]);
+                                
        return redirect()->route('cart.index')->with('success', 'Produit ajouté au panier avec succès!');
     }
 
