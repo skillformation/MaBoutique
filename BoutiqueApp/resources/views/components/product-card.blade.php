@@ -1,6 +1,7 @@
 <div>
-    {{-- Recupération des données du produit,avec la variable $product
     @props(['product'])
+    {{-- Recupération des données du produit,avec la variable $product
+  
     @dd($product) --}}
    
   <!-- Carte Produit 1 -->
@@ -10,7 +11,7 @@
         <h3 class="text-lg font-semibold text-gray-800 mb-2" data-product-name="T-Shirt Basique Uni">T-Shirt Basique Uni</h3>
         <p class="text-gray-600 text-sm mb-3">Confort et style au quotidien.</p>
         <div class="flex items-center justify-between mb-4">
-            <span class="text-xl font-bold text-indigo-600">29,99 €</span>
+            <span class="text-xl font-bold text-indigo-600">{{$product->price}}</span>
             <div class="flex items-center text-yellow-500">
                 <span class="text-lg">⭐</span><span class="text-lg">⭐</span><span class="text-lg">⭐</span><span class="text-lg">⭐</span><span class="text-lg">☆</span>
                 <span class="text-gray-500 text-sm ml-1">(120)</span>

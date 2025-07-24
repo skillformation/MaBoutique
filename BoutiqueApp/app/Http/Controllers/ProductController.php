@@ -15,7 +15,7 @@ class ProductController extends Controller
         
        /*  Vérifier si la variable $products 
         dd($products); */
-
+      
         // Recupérer les produits depuis la base de données
         return view('products.index', compact('products'));
     }
