@@ -6,10 +6,11 @@
    
   <!-- Carte Produit 1 -->
   <div class="bg-white rounded-xl shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300">
-    <img src="https://placehold.co/400x400/fca5a5/ffffff?text=T-Shirt+Cool" alt="T-Shirt Basique Uni" class="w-full h-64 object-cover">
+    <a href="{{ route('products.show', $product->id) }}">
+    <img src="https://placehold.co/400x400/fca5a5/ffffff?text=T-Shirt+Cool" alt="T-Shirt Basique Uni" class="w-full h-64 object-cover"></a>
     <div class="p-5">
-        <h3 class="text-lg font-semibold text-gray-800 mb-2" data-product-name="T-Shirt Basique Uni">T-Shirt Basique Uni</h3>
-        <p class="text-gray-600 text-sm mb-3">Confort et style au quotidien.</p>
+        <h3 class="text-lg font-semibold text-gray-800 mb-2" data-product-name="T-Shirt Basique Uni">{{$product->name}}</h3>
+        <p class="text-gray-600 text-sm mb-3">{{$product->description}}</p>
         <div class="flex items-center justify-between mb-4">
             <span class="text-xl font-bold text-indigo-600">{{$product->price}}</span>
             <div class="flex items-center text-yellow-500">
