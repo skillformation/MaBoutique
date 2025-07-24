@@ -22,7 +22,9 @@ class ProductController extends Controller
 
     public function show($id)
     {
-        // Récupérer un produit spécifique par son ID
-        return view('products.show', ['id' => $id]);
+          // Récupérer un produit spécifique par son ID
+        $products = Product::findOrfail($id);
+      
+        return view('products.show', compact('products'));
     }
 }
