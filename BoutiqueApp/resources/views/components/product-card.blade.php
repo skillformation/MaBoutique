@@ -1,4 +1,8 @@
 <div>
+    {{-- Recupération des données du produit,avec la variable $product
+    @props(['product'])
+    @dd($product) --}}
+   
   <!-- Carte Produit 1 -->
   <div class="bg-white rounded-xl shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300">
     <img src="https://placehold.co/400x400/fca5a5/ffffff?text=T-Shirt+Cool" alt="T-Shirt Basique Uni" class="w-full h-64 object-cover">
