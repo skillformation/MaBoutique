@@ -11,7 +11,13 @@ class CartController extends Controller
      */
     public function index()
     {
-        //
+        return view('products.cart');
+    }
+
+    //Ajouter un produit au panier a partir du produit selectionné
+    public function addToCart(Product $product)
+    {
+       return redirect()->route('cart.index')->with('success', 'Produit ajouté au panier avec succès!');
     }
 
     /**
