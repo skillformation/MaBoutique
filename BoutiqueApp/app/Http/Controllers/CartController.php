@@ -16,8 +16,11 @@ class CartController extends Controller
     {
         //Afficher le panier de l'utilisateur connecté
         $user = auth()->user();
-    
-        return view('products.cart');
+     //recuperer les produits du panier de l'utilisateur
+     $cartProducts = $user->cartProduct()->get();
+     /*   dd($cartProducts); */
+        //Afficcher les produits du panier de l'utilisateur a la vue
+       return view('products.cart', compact('cartProducts'));
     }
 
     //Ajouter un produit au panier a partir du produit selectionné
@@ -27,12 +30,9 @@ class CartController extends Controller
         $user = auth()->user();
         /* dd($user); */
 
-        //recuperer les produits du panier de l'utilisateur
-        $cartProducts = $user->cartProduct()->get();
-      /*   dd($cartProducts); */
+       
 
-      //Afficcher les produits du panier de l'utilisateur a la vue
-       return view('products.cart', compact('cartProducts'));
+      
 
        
 
