@@ -12,7 +12,7 @@
 
 
             @forelse ($products as $product)
-                {{-- Passer le produit à la carte --}}
+               {{--  Passer le produit à la carte --}}
                 <x-product-card :product="$product" />
             @empty
                 Pas de produit disponible pour le moment.

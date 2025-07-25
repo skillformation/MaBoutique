@@ -2,6 +2,7 @@
  {{-- @dd($products)  --}}
 @extends('layouts.product')
 @section('content')
+@props(['products'])
     {{--  <x-menu/> --}}
     <x-header/>
 
@@ -62,9 +63,9 @@
                 <div class="flex items-center space-x-4 mb-6">
                     <label for="quantity" class="text-gray-800 font-semibold">Quantité :</label>
                     <input type="number" id="quantity" value="1" min="1" class="w-20 p-3 border border-gray-300 rounded-lg text-center focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all">
-                    <button class="bg-indigo-600 text-white font-bold py-3 px-8 rounded-full shadow-md hover:bg-indigo-700 transform hover:scale-105 transition-all duration-300 flex-grow">
+                    <a href="{{route('cart.add',$products)}}" class="bg-indigo-600 text-white font-bold py-3 px-8 rounded-full shadow-md hover:bg-indigo-700 transform hover:scale-105 transition-all duration-300 flex-grow">
                         Ajouter au panier
-                    </button>
+                    </a>
                 </div>
 
                 {{-- Informations supplémentaires (SKU, Stock) --}}

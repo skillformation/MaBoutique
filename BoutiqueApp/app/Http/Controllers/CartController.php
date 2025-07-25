@@ -14,19 +14,39 @@ class CartController extends Controller
      */
     public function index()
     {
+        //Afficher le panier de l'utilisateur connecté
+        $user = auth()->user();
+    
         return view('products.cart');
     }
 
     //Ajouter un produit au panier a partir du produit selectionné
     public function addToCart(Product $product)
     {
-        $cart=Cart::create(['user_id' => auth()->id(),
-                                'product_id' => $product->id,
-                                'quantity' => 1,
-                                'price' => $product->price]);
-                                
+        //Logique pour vérifier si le produit est déjà dans le panier
+        $user = auth()->user();
+        /* dd($user); */
+
+        //recuperer les produits du panier de l'utilisateur
+        $cartProducts = $user->cartProduct()->get();
+      /*   dd($cartProducts); */
+
+      //Afficcher les produits du panier de l'utilisateur a la vue
+       return view('products.cart', compact('cartProducts'));
+
+       
+
+        if (!$user->hasProductInCart($product)) {
+            $cart=Cart::create(['user_id' => auth()->id(),
+            'product_id' => $product->id,
+            'quantity' => 1,
+            'price' => $product->price]);
+        }
+
        return redirect()->route('cart.index')->with('success', 'Produit ajouté au panier avec succès!');
     }
+
+    
 
     /**
      * Show the form for creating a new resource.

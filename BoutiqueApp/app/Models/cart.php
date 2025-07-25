@@ -19,4 +19,7 @@ class cart extends Model
         'quantity' => 'integer',
         'price' => 'decimal:2',
     ];
+
+
+  
 }

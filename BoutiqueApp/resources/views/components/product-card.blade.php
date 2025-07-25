@@ -1,11 +1,11 @@
-<div>
+{{-- <div> --}}
     @props(['product'])
     {{-- Recupération des données du produit,avec la variable $product
   
     @dd($product) --}}
    
   <!-- Carte Produit 1 -->
-  <div class="bg-white rounded-xl shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300">
+{{-- <div class="bg-white rounded-xl shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300">
     <a href="{{ route('products.show', $product->id) }}">
     <img src="https://placehold.co/400x400/fca5a5/ffffff?text=T-Shirt+Cool" alt="T-Shirt Basique Uni" class="w-full h-64 object-cover"></a>
     <div class="p-5">
@@ -24,5 +24,23 @@
 
         <div class="style-tip-output text-sm text-gray-700 mt-3 p-2 bg-gray-100 rounded-md hidden"></div>
     </div>
-</div>
-</div>
+</div> --}}
+
+ <div class="flex flex-col  bg-white p-4 ">
+   
+    <div class="w-full max-w-sm">
+        <a href="{{ route('products.show', $product->id) }}">
+      <img src="https://placehold.co/400x400/fca5a5/ffffff?text=image"  class="w-full h-auto object-cover"></a>
+    </div>
+    
+    <div class="text-left w-full max-w-sm mt-4">
+        <h3 class="text-lg font-semibold text-gray-800 mb-2" data-product-name="T-Shirt Basique Uni">{{$product->name}}</h3>
+      <p class="text-lg font-sans text-gray-800">{{$product->description}}</p>
+      <p class="text-lg font-bold text-gray-800">€ {{$product->price}}</p>
+    </div>
+  </div>  
+{{-- </div>  --}} 
+
+
+
+  
