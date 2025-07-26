@@ -33,7 +33,7 @@
 
                 {{-- Description courte --}}
                 <p class="text-gray-700 leading-relaxed mb-8">
-                    {{ $product->description ?? 'Ce produit est un incontournable pour votre garde-robe. Fabriqué avec des matériaux de haute qualité, il offre un confort exceptionnel et un style intemporel. Parfait pour toutes les occasions, il s\'adaptera à votre quotidien avec élégance.' }}
+                    {{$products->description }}
                 </p>
 
                 {{-- Options du produit (taille, couleur, etc.) --}}

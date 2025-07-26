@@ -30,12 +30,6 @@ class CartController extends Controller
         $user = auth()->user();
         /* dd($user); */
 
-       
-
-      
-
-       
-
         if (!$user->hasProductInCart($product)) {
             $cart=Cart::create(['user_id' => auth()->id(),
             'product_id' => $product->id,
@@ -44,6 +38,19 @@ class CartController extends Controller
         }
 
        return redirect()->route('cart.index')->with('success', 'Produit ajouté au panier avec succès!');
+    }
+
+    //Supprimer un produit du panier
+    public function removeFromCart(Product $product)
+    {
+        //Logique pour supprimer le produit du panier
+        $user = auth()->user();
+        $cart = $user->cartProduct()->where('product_id', $product->id)->first();
+        if ($cart) {
+            $cart->delete();
+            return redirect()->route('cart.index')->with('success', 'Produit supprimé du panier avec succès!');
+        }
+      
     }
 
     
